@@ -2,31 +2,14 @@
     "manifest_version": 3,
     "name": "N予備校系",
     "description": "N予備校の教材関連のやつです。",
-    "version": "2.1.1",
-    "action": {
-        "default_icon": {
-            "16": "images/n_icon16.png",
-            "32": "images/n_icon32.png",
-            "48": "images/n_icon48.png",
-            "128": "images/n_icon128.png"
-        }
-    },
-    "icons": {
-      "16": "images/n_icon16.png",
-      "32": "images/n_icon32.png",
-      "48": "images/n_icon48.png",
-      "128": "images/n_icon128.png"
-    },
-    "background": {
-        "service_worker": "background.js"
-    },
+    "version": "1.0.0",
     "permissions": [
         "activeTab",
         "scripting"
     ],
     "content_scripts": [
         {
-          "matches": ["*://*/*"],
+          "matches": ["https://www.nnn.ed.nico/*"],
           "js": ["content-script.js"]
         }
       ]
