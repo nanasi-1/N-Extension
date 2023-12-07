@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "N予備校系",
   "description": "N予備校の問題式教材の正誤を、解答ボタンを押すことで判定してくれます。",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "permissions": [
     "activeTab",
     "scripting"
