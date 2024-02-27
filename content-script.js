@@ -6,7 +6,11 @@ window.addEventListener('urlChange', async function() {
     await sleep(500);
 
     /** @type {Document} */
-    const que = document.querySelector("iframe[title=教材]").contentDocument;
+    const que = document.querySelector("iframe[title=教材]")?.contentDocument;
+    if(!que) {
+        console.info('回答チェッカー：教材が見つからなかったため終了します');
+        return;
+    }
 
     // li.onclickに関数を追加
     document.querySelectorAll('ul[aria-label="課外教材リスト"]>li').forEach(li => {
