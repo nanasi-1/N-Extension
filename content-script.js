@@ -2,11 +2,14 @@
 
 window.addEventListener('urlChange', async function() {
     if(!(new RegExp('https://www.nnn.ed.nico/courses/[0-9]+/chapters/[0-9]+/.*')).test(location.href)) return;
-    console.log('N予備: 問題のURLを検知');
     await sleep(500);
 
     /** @type {Document} */
-    const que = document.querySelector("iframe[title=教材]").contentDocument;
+    const que = document.querySelector("iframe[title=教材]")?.contentDocument;
+    if(!que) {
+        console.info('回答チェッカー：教材が見つからなかったため終了します');
+        return;
+    }
 
     // li.onclickに関数を追加
     document.querySelectorAll('ul[aria-label="課外教材リスト"]>li').forEach(li => {
@@ -20,7 +23,6 @@ window.addEventListener('urlChange', async function() {
 
 /** @param {Document} que */
 async function handle(que) {
-    console.log('N予備校系: 問題がクリックされました');
     await sleep(1000);
 
     // 回答時に正解か出力するやつ
