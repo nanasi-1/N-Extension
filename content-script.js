@@ -2,7 +2,6 @@
 
 window.addEventListener('urlChange', async function() {
     if(!(new RegExp('https://www.nnn.ed.nico/courses/[0-9]+/chapters/[0-9]+/.*')).test(location.href)) return;
-    console.log('N予備: 問題のURLを検知');
     await sleep(500);
 
     /** @type {Document} */
@@ -24,7 +23,6 @@ window.addEventListener('urlChange', async function() {
 
 /** @param {Document} que */
 async function handle(que) {
-    console.log('N予備校系: 問題がクリックされました');
     await sleep(1000);
 
     // 回答時に正解か出力するやつ
