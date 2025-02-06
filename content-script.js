@@ -13,7 +13,7 @@ window.addEventListener('urlChange', async function() {
 
     // li.onclickに関数を追加
     document.querySelectorAll('ul[aria-label="課外教材リスト"]>li').forEach(li => {
-        if(li.querySelector('i[type*=rounded]').getAttribute('type') !== 'exercise-rounded') return;
+        if(li.querySelector('svg[type*=rounded]').getAttribute('type') !== 'exercise-rounded') return;
         li.onclick = () => handle(que);
     });
 
